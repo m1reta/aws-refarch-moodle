@@ -7,7 +7,7 @@ Parameters:
     AllowedValues:
       - Redis
       - Memcached
-    Default: Redis
+    Default: Memcached
     Description: Cache engine to use.
     Type: String
   CacheUsageType:

@@ -142,7 +142,7 @@ Parameters:
   DeploymentLocation:
     Description: Templates location (S3 URL). By default, uses AWS provided templates.
     Type: String
-    Default: https://aws-moodle.s3.ap-southeast-1.amazonaws.com/template/
+    Default: https://s3.amazonaws.com/aws-refarch/moodle/4.4/templates
   PublicAlbAcmCertificate:
     AllowedPattern: ^$|(arn:aws:acm:)([a-z0-9/:-])*([a-z0-9])$
     Description: '[ Optional ] The AWS Certification Manager certificate ARN for the ALB certificate - this certificate should be created in the region you wish to run the ALB and must reference the domain name you use below.'
@@ -258,7 +258,7 @@ Parameters:
     AllowedValues:
       - Redis
       - Memcached
-    Default: Redis
+    Default: Memcached
     Description: Indicates whether to use ElastiCache Memcached or Redis. 
     Type: String
   UseSessionCacheBoolean:
@@ -272,7 +272,7 @@ Parameters:
     AllowedValues:
       - true
       - false
-    Default: false
+    Default: true
     Description: Set to true to deploy ElastiCache session cache using serverless approach. Set to false to use instances instead.
     Type: String
   SessionCacheNodeType:
@@ -344,7 +344,7 @@ Parameters:
     AllowedValues:
       - true
       - false
-    Default: false
+    Default: true
     Description: Indicates whether to use serverless ElastiCache for application.
     Type: String
   ApplicationCacheNodeType:

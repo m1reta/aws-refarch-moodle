@@ -182,31 +182,18 @@ Parameters:
     Type: String
 
 Conditions:
-  NumberOfSubnets1:
-      !Equals [ 1, !Ref NumberOfSubnets ]
-  NumberOfSubnets2:
-      !Equals [ 2, !Ref NumberOfSubnets ]
-  NumberOfSubnets3:
-      !Equals [ 3, !Ref NumberOfSubnets ]
-  Subnet0: !Or
-    - !Condition NumberOfSubnets1
-    - !Condition NumberOfSubnets2
-    - !Condition NumberOfSubnets3
-  Subnet1: !Or
-    - !Condition NumberOfSubnets2
-    - !Condition NumberOfSubnets3
-  Subnet2: !Condition NumberOfSubnets3
+  NumberOfSubnets1: !Equals [ 1, !Ref NumberOfSubnets ]
+  NumberOfSubnets2: !Equals [ 2, !Ref NumberOfSubnets ]
   UsingGraviton2Ami:  !Or
-    - !Equals ["t4",!Select [0, !Split [ "g.", !Ref WebInstanceType]]]
-    - !Equals ["c6",!Select [0, !Split [ "g.", !Ref WebInstanceType]]]
-    - !Equals ["c7",!Select [0, !Split [ "g.", !Ref WebInstanceType]]]
-    - !Equals ["m6",!Select [0, !Split [ "g.", !Ref WebInstanceType]]]
-    - !Equals ["m7",!Select [0, !Split [ "g.", !Ref WebInstanceType]]]
-    - !Equals ["r6",!Select [0, !Split [ "g.", !Ref WebInstanceType]]]
-    - !Equals ["r7",!Select [0, !Split [ "g.", !Ref WebInstanceType]]]
+    - !Equals ["t4",!Select [0, !Split [ "g.", !Ref InstanceType]]]
+    - !Equals ["c6",!Select [0, !Split [ "g.", !Ref InstanceType]]]
+    - !Equals ["c7",!Select [0, !Split [ "g.", !Ref InstanceType]]]
+    - !Equals ["m6",!Select [0, !Split [ "g.", !Ref InstanceType]]]
+    - !Equals ["m7",!Select [0, !Split [ "g.", !Ref InstanceType]]]
+    - !Equals ["r6",!Select [0, !Split [ "g.", !Ref InstanceType]]]
+    - !Equals ["r7",!Select [0, !Split [ "g.", !Ref InstanceType]]]
 
 Resources:
-########################### TODO put this in the codepipeline template
   MoodleRepo:
     Type: AWS::CodeCommit::Repository
     Properties:
@@ -456,7 +443,7 @@ Resources:
                   $CFG->directorypermissions = 02777;
                   $CFG->admin = 'admin';
                   // Configure Session Cache
-                  $SessionsCacheType = 'Redis';
+                  $SessionsCacheType = 'Memcached';
                   $SessionEndpoint = '';
                   if ($SessionEndpoint != '') {
                     
