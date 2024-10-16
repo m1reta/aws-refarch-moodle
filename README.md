@@ -10,7 +10,7 @@ These nested templates can be used to deploy Moodle™ on AWS using [Amazon Virt
 
 This architecture is expansive enough to meet the needs of large institutions / organizations. Smaller organizations can choose to run a subset of the template to meet their needs. These templates can also be run individually and may be modified.
 
-This template currently uses [Moodle™ 4.4](https://download.moodle.org/download.php/stable404/moodle-4.4.tgz) stable version downloaded directly from [download.moodle.org](https://download.moodle.org/releases/latest/). Details for downloading are available in the [templates/03-pipelinehelper.yaml](templates/03-pipelinehelper.yaml) template file.
+This template currently uses [Moodle™ 4.5+](https://download.moodle.org/download.php/stable404/moodle-4.4.tgz) stable version downloaded directly from [download.moodle.org](https://download.moodle.org/releases/latest/). Details for downloading are available in the [templates/03-pipelinehelper.yaml](templates/03-pipelinehelper.yaml) template file.
 
 ## Deployment guide
 
