@@ -492,7 +492,7 @@ Resources:
                 if [ ! -d /var/www/.opcache ]; then                    
                     mkdir -p /var/www/.opcache
                 fi
-                # Ensure opcache is enabled and add settings recomended by moodle at https://docs.moodle.org/34/en/OPcache
+                # Ensure opcache is enabled and add settings recommended by moodle at https://docs.moodle.org/34/en/OPcache
                 sed -i 's/;opcache.file_cache=.*/opcache.file_cache=\/tmp/' /etc/php.d/10-opcache.ini
                 sed -i 's/opcache.memory_consumption=.*/opcache.memory_consumption=512/' /etc/php.d/10-opcache.ini
                 sed -i 's/opcache.max_accelerated_files=.*/opcache.max_accelerated_files=8000/' /etc/php.d/10-opcache.ini

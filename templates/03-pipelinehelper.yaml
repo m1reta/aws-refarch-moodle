@@ -456,7 +456,7 @@ Resources:
                   $CFG->directorypermissions = 02777;
                   $CFG->admin = 'admin';
                   // Configure Session Cache
-                  $SessionsCacheType = 'Memcached';
+                  $SessionsCacheType = 'Redis';
                   $SessionEndpoint = '';
                   if ($SessionEndpoint != '') {
                     
